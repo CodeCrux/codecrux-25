@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Complete Guide to Web Application Development | CodeCrux Web Technologies pvt ltd</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Complete Guide to Web Application Development" />
+<meta name="author" content="Shyam Mohan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Codecrux brings a complete guide Web Application Development, how web apps work. Difference between Mobile Apps and Web Apps and different types of Web Applications and more…" />
+<meta property="og:description" content="Codecrux brings a complete guide Web Application Development, how web apps work. Difference between Mobile Apps and Web Apps and different types of Web Applications and more…" />
+<link rel="canonical" href="http://localhost:4000/blog/web-application-development-complete-guide" />
+<meta property="og:url" content="http://localhost:4000/blog/web-application-development-complete-guide" />
+<meta property="og:site_name" content="CodeCrux Web Technologies pvt ltd" />
+<meta property="og:image" content="http://localhost:4000/img/blogs/main-banner.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-15T09:03:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/img/blogs/main-banner.jpeg" />
+<meta property="twitter:title" content="Complete Guide to Web Application Development" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shyam Mohan"},"dateModified":"2018-03-15T09:03:00+05:30","datePublished":"2018-03-15T09:03:00+05:30","description":"Codecrux brings a complete guide Web Application Development, how web apps work. Difference between Mobile Apps and Web Apps and different types of Web Applications and more…","headline":"Complete Guide to Web Application Development","image":"http://localhost:4000/img/blogs/main-banner.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/web-application-development-complete-guide"},"url":"http://localhost:4000/blog/web-application-development-complete-guide"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CodeCrux Web Technologies pvt ltd" />
+    <meta name="viewport" content="width=device-width">
+    
+
+<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5a50d614079115001207f66b&product=inline-share-buttons' async='async'></script>
+
+
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,900,500,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default home-navbar" id="navbar">
+      <div class="container"><!-- navigation -->
+<section class="fixed-top navigation">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html"><img src="images/codecrux-logo.svg" alt="logo"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- navbar -->
+      <div class="collapse navbar-collapse text-center" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#feature">Feature</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="service.html">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <a href="#" class="btn btn-primary ml-lg-3 primary-shadow">Try Free</a>
+      </div>
+    </nav>
+  </div>
+</section>
+<!-- /navigation -->
+
+
+<div class="navbar-header page-scroll">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand nav-logo" href="/">
+    <span class="">
+      <img src="/img/codecrux-logo.svg" alt="codecrux.com"  class="img-fluid img-thumbnail"/>
+    </span>
+  </a>
+  <a href="/schedule-meeting/" class="btn-rounded btn-g"> Schedule a Meeting </a>
+  
+</div>
+
+<div class="collapse navbar-collapse nav-text" id="main-nav" style="border-bottom: 1px solid #eee;">
+  <ul class="nav navbar-nav navbar-right">
+    <!-- <li class="dropdown"><a href="https://codecrux-com.translate.goog/?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=en&_x_tr_pto=wapp" class="dropdown-toggle-new">TRANSLATE</a></li> -->
+    <li class="text-left"><a href="/about">ABOUT</a></li>
+    <li class="text-left"><a href="/blog">BLOG</a></li>
+    
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">SERVICES
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li class="p10 text-left"><a href="/ui-ux-design">UI & UX Design</a></li>
+        <!-- <li class="p10 text-left"><a href="/web-application-development">Web Application Development</a></li> -->
+        <li class="p10 text-left"><a href="/ruby-on-rails-development">Ruby on rails Development</a></li>
+        <li class="p10 text-left"><a href="/mobile-apps-development">Mobile application development</a></li>
+        <li class="p10 text-left"><a href="/android-applications">Android application development</a></li>
+        <!-- <li class="p10 text-left"><a href="/ios-mobile-app-development">iOS moblie app development</a></li> -->
+        <li class="p10 text-left"><a href="/react-native-app-development">React Native App Development</a></li>
+        <li class="p10 text-left"><a href="/devops-as-a-service">DevOps as a Service </a></li>
+        <li class="p10 text-left"><a href="/kubernetes">Kubernetes</a></li>
+        <li class="p10 text-left"><a href="/open-source-customization">Open Source Customization</a></li>
+      </ul>
+    </li>
+
+    <!-- <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">SOLUTIONS
+      <span class="caret"></span></a>
+      
+      <ul class="dropdown-menu">
+        <li class="p10 text-left"><a href="/custom-crm-development">Custom CRM development</a></li>
+        <li class="p10 text-left"><a href="/ecommerce-website-and-mobile-app">Ecommerce website and mobile app</a></li>
+        <li class="p10 text-left"><a href="/kennel-management-software">Kennel management software</a></li>
+        <li class="p10 text-left"><a href="/job-portal-development">Job portal development</a></li>
+        <li class="p10 text-left"><a href="/waste-management-software-applications">Waste management software applications</a></li>
+      </ul>
+
+    </li> -->
+
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">HIRE A DEVELOPER
+      <span class="caret"></span></a>
+      
+      <ul class="dropdown-menu">
+       
+          <li class="p10 text-left"><a href="/hire-ui-ux-designer/">Hire UI & UX Design</a></li>
+          <li class="p10 text-left"><a href="/hire-ruby-on-rails-developer">Hire Ruby on rails developer</a></li>
+          <li class="p10 text-left"><a href="/hire-android-developer">Hire Android app developer</a></li>
+          <li class="p10 text-left"><a href="/hire-mobile-app-developer">Hire Moblie app developer</a></li>
+          <li class="p10 text-left"><a href="/hire-app-developer">Hire App developer</a></li>
+          <li class="p10 text-left"><a href="/hire-web-developer">Hire Web developer</a></li>
+
+      
+      </ul>
+
+    </li>
+
+
+
+    <!-- <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">SUCCESS STORIES
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li class="p10 text-left"><a href="/success-stories">Success Stories</a></li>
+        <li class="p10 text-left"><a href="/success-stories/maverick-ai">Maverick.ai</a></li>
+        <li class="p10 text-left"><a href="/success-stories/tee-public">Teepublic</a></li>
+        <li class="p10 text-left"><a href="/success-stories/minibar-delivery">Minibar Delivery</a></li>
+      </ul>
+    </li> -->
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">COMPANY
+        <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li class="p10 text-left"><a href="/about">About</a></li>
+        <li class="p10 text-left"><a href="/portfolio">Portfolio</a></li>
+        <li class="p10 text-left"><a href="/services">Services</a></li>
+        <li class="p10 text-left"><a href="/jobs">Join our team</a></li>
+        <li class="p10 text-left"><a href="/blog">Blog</a></li>
+        <li class="p10 text-left"><a href="/contact">Contact</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-cta"><div id="btn-meetsect"><a href="/schedule-meeting/" class="btn btn-rounded btn-meet">&nbsp;Schedule a Meeting&nbsp;</a></div></li>
+  </ul>
+</div>
+</div>
+    </nav>
+ 
+    <div class="container">
+    
+      <div class="blog-post-body">
+        <h1>Complete Guide to Web Application Development</h1>
+        <time>
+          <i class="fa fa-clock-o"></i>
+          15 Mar 2018 -
+          Shyam Mohan
+        </time>
+
+        <br>
+        <br>
+        <center>
+          <img src="/img/blogs/main-banner.jpeg" alt="Complete Guide to Web Application Development" class="img-responsive"/>
+        </center>
+        <br>
+
+        <h3 id="complete-guide-to-web-application-development-how-web-apps-work-differences-with-mobile-apps-and-types-of-web-applications">Complete Guide to Web Application Development: How Web Apps Work, Differences with Mobile Apps, and Types of Web Applications</h3>
+
+<p>In today’s digital age, web applications (web apps) play a crucial role in delivering interactive, dynamic content over the internet. From banking services to social media platforms and e-commerce stores, web applications have revolutionized the way we interact with the web. This guide dives deep into web application development, exploring how web apps work, their differences from mobile apps, and the various types of web applications available.</p>
+
+<hr />
+
+<h3 id="what-is-a-web-application">What is a Web Application?</h3>
+
+<p>A <strong>web application</strong> is a software application that runs on a web server and is accessed through a browser via the internet. Unlike traditional desktop applications, which are installed on a local device, web apps reside on remote servers and deliver content or functionality through an interface in a web browser.</p>
+
+<p>Web apps are designed to perform various tasks, such as managing databases, processing data, or allowing users to perform complex actions, including booking tickets, managing finances, or sharing files.</p>
+
+<hr />
+
+<h3 id="how-web-applications-work">How Web Applications Work</h3>
+
+<ol>
+  <li><strong>Client-Side (Front-End):</strong>
+The client-side is what the user interacts with in their web browser. It includes:
+    <ul>
+      <li><strong>HTML</strong>: The skeleton of the web app, defining structure and layout.</li>
+      <li><strong>CSS</strong>: Responsible for the app’s styling and design.</li>
+      <li><strong>JavaScript</strong>: Enables interactive elements, form submissions, and dynamic content updates without reloading the page.</li>
+    </ul>
+  </li>
+  <li><strong>Server-Side (Back-End):</strong>
+The server-side is where the app’s logic, processing, and database operations occur. It involves:
+    <ul>
+      <li><strong>Web server</strong>: Handles requests from the client, processes them, and returns the necessary data.</li>
+      <li><strong>Database</strong>: Stores and retrieves data (e.g., user information, content) that is requested by the web app.</li>
+      <li><strong>Server-side languages</strong>: These include PHP, Ruby, Python, Java, and Node.js, which power the logic behind the scenes.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>APIs and Databases:</strong>
+Web applications often interact with databases and external services via <strong>APIs (Application Programming Interfaces)</strong>, which allow data exchange between the client, server, and third-party services.</p>
+  </li>
+  <li><strong>Hosting and Deployment:</strong>
+Once developed, web apps are hosted on servers, and their front-end is deployed to allow user access. Web app hosting providers include AWS, Google Cloud, and Microsoft Azure.</li>
+</ol>
+
+<hr />
+
+<h3 id="difference-between-web-apps-and-mobile-apps">Difference Between Web Apps and Mobile Apps</h3>
+
+<p>Though both web apps and mobile apps aim to deliver functionality to users, there are key differences between the two.</p>
+
+<ol>
+  <li><strong>Platform Dependency:</strong>
+    <ul>
+      <li><strong>Web Apps</strong>: Accessed via web browsers (Chrome, Firefox, Safari, etc.) and work across multiple platforms (Windows, macOS, Linux, Android, iOS).</li>
+      <li><strong>Mobile Apps</strong>: Built specifically for mobile devices and need to be installed from an app store (Google Play or App Store). They are often platform-dependent (Android/iOS).</li>
+    </ul>
+  </li>
+  <li><strong>Installation:</strong>
+    <ul>
+      <li><strong>Web Apps</strong>: No need for installation. Users can access them directly from a browser.</li>
+      <li><strong>Mobile Apps</strong>: Require installation from a dedicated app store, consuming device storage.</li>
+    </ul>
+  </li>
+  <li><strong>Development Languages:</strong>
+    <ul>
+      <li><strong>Web Apps</strong>: Developed using web technologies like HTML, CSS, JavaScript, along with back-end languages such as PHP, Ruby, Python, etc.</li>
+      <li><strong>Mobile Apps</strong>: Developed using native languages like Java or Kotlin (Android), Swift or Objective-C (iOS), or cross-platform tools like Flutter or React Native.</li>
+    </ul>
+  </li>
+  <li><strong>User Experience:</strong>
+    <ul>
+      <li><strong>Web Apps</strong>: Provide a browser-based experience, which can sometimes be limited compared to the rich experience of native mobile apps.</li>
+      <li><strong>Mobile Apps</strong>: Offer a more personalized experience with access to device features such as camera, GPS, push notifications, etc.</li>
+    </ul>
+  </li>
+  <li><strong>Offline Access:</strong>
+    <ul>
+      <li><strong>Web Apps</strong>: Generally require an active internet connection.</li>
+      <li><strong>Mobile Apps</strong>: Can be designed to work offline or with intermittent connectivity.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="types-of-web-applications">Types of Web Applications</h3>
+
+<p>Web applications come in different types, depending on their structure, functionality, and how they serve users. Let’s look at some common types of web apps:</p>
+
+<ol>
+  <li><strong>Static Web Applications:</strong>
+    <ul>
+      <li><strong>Definition</strong>: Static web apps deliver fixed content without any interactivity or dynamic content. These apps are generally used for small-scale purposes like portfolios or landing pages.</li>
+      <li><strong>Example</strong>: Simple blogs, corporate landing pages.</li>
+      <li><strong>Tools</strong>: HTML, CSS, JavaScript.</li>
+    </ul>
+  </li>
+  <li><strong>Dynamic Web Applications:</strong>
+    <ul>
+      <li><strong>Definition</strong>: These apps generate content dynamically based on user interactions and database inputs. Dynamic web apps can change content and perform tasks in real-time.</li>
+      <li><strong>Example</strong>: Social media platforms, e-commerce stores.</li>
+      <li><strong>Tools</strong>: PHP, Node.js, Python, Ruby, and databases like MySQL or MongoDB.</li>
+    </ul>
+  </li>
+  <li><strong>Single-Page Applications (SPAs):</strong>
+    <ul>
+      <li><strong>Definition</strong>: SPAs load a single HTML page and update content dynamically without requiring a full page reload. This provides a smoother and faster user experience.</li>
+      <li><strong>Example</strong>: Gmail, Google Maps.</li>
+      <li><strong>Tools</strong>: React, Angular, Vue.js, AJAX.</li>
+    </ul>
+  </li>
+  <li><strong>Multi-Page Applications (MPAs):</strong>
+    <ul>
+      <li><strong>Definition</strong>: MPAs reload the entire web page every time a user requests new data or navigates to a different page. These are used when a web app needs to offer extensive content across various pages.</li>
+      <li><strong>Example</strong>: E-commerce websites with multiple categories and subpages.</li>
+      <li><strong>Tools</strong>: Traditional server-side languages like PHP, Ruby on Rails, and frameworks like Laravel or Django.</li>
+    </ul>
+  </li>
+  <li><strong>Progressive Web Applications (PWAs):</strong>
+    <ul>
+      <li><strong>Definition</strong>: PWAs combine the best features of web apps and mobile apps. They are web applications designed to offer app-like features, such as offline access, push notifications, and home screen installation without the need for an app store.</li>
+      <li><strong>Example</strong>: Twitter Lite, Pinterest.</li>
+      <li><strong>Tools</strong>: Service Workers, Web App Manifests, JavaScript frameworks.</li>
+    </ul>
+  </li>
+  <li><strong>E-Commerce Web Applications:</strong>
+    <ul>
+      <li><strong>Definition</strong>: Web apps that provide features like product listings, shopping carts, payment gateways, and order tracking. These apps manage extensive product data and customer information.</li>
+      <li><strong>Example</strong>: Amazon, Shopify.</li>
+      <li><strong>Tools</strong>: WooCommerce, Magento, Shopify frameworks.</li>
+    </ul>
+  </li>
+  <li><strong>Content Management Systems (CMS):</strong>
+    <ul>
+      <li><strong>Definition</strong>: CMS-based web applications allow users to create, manage, and publish content without requiring in-depth technical knowledge. These apps are essential for blogs, news sites, and portfolios.</li>
+      <li><strong>Example</strong>: WordPress, Drupal, Joomla.</li>
+      <li><strong>Tools</strong>: WordPress, Joomla, Ghost, Laravel Nova.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="key-technologies-for-web-application-development">Key Technologies for Web Application Development</h3>
+
+<ol>
+  <li><strong>Front-End Technologies:</strong>
+    <ul>
+      <li><strong>HTML, CSS, JavaScript</strong>: Core technologies for building user interfaces.</li>
+      <li><strong>Frameworks</strong>: React, Angular, Vue.js for building interactive and responsive interfaces.</li>
+    </ul>
+  </li>
+  <li><strong>Back-End Technologies:</strong>
+    <ul>
+      <li><strong>Languages</strong>: Node.js, PHP, Ruby on Rails, Python (Django, Flask), Java (Spring Boot).</li>
+      <li><strong>Databases</strong>: MySQL, PostgreSQL, MongoDB, SQLite.</li>
+      <li><strong>APIs</strong>: RESTful services and GraphQL for data communication between the client and server.</li>
+    </ul>
+  </li>
+  <li><strong>Development Tools and Frameworks:</strong>
+    <ul>
+      <li><strong>Version Control</strong>: Git and GitHub for source code management.</li>
+      <li><strong>CI/CD Pipelines</strong>: Jenkins, RazorOps, or GitLab CI for continuous integration and deployment.</li>
+      <li><strong>Cloud Platforms</strong>: AWS, Azure, Google Cloud for scalable deployment.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="best-practices-in-web-application-development">Best Practices in Web Application Development</h3>
+
+<ol>
+  <li><strong>Security First</strong>: Implement HTTPS, data encryption, and authentication mechanisms to secure user data.</li>
+  <li><strong>Responsive Design</strong>: Ensure that the web app is mobile-friendly and offers a smooth experience across different screen sizes.</li>
+  <li><strong>Performance Optimization</strong>: Minimize file sizes, compress images, and leverage browser caching to ensure faster loading times.</li>
+  <li><strong>Scalability</strong>: Choose a back-end architecture that can handle an increase in users or data without performance issues.</li>
+  <li><strong>Accessibility</strong>: Make the web application accessible to all users, including those with disabilities, by adhering to WCAG standards.</li>
+</ol>
+
+<hr />
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Web applications have become integral to how businesses operate and serve their users in the digital space. Whether you’re developing a simple portfolio site or a complex e-commerce platform, understanding the structure, types, and best practices of web application development is essential. By leveraging the right tools, frameworks, and technologies, you can build web apps that are scalable, secure, and user-friendly.</p>
+
+<hr />
+
+      </div>
+    </div>
+
+    <br>
+<br>
+
+<div class="container">
+  <div class="cta-box">
+      <h2>Empower Your Business with Our Expert Solutions</h2>
+      <p>Unlock the full potential of your projects with our professional services!</p>
+      <ul class="list-unstyled mb-4">
+          <li><strong>Full Stack Development | AI/ML Services | DevOps Expertise</strong></li>
+          <!-- <img src="/img/react-app.svg">
+          <img src="/img/ruby-icon.svg">
+          <img src="/img/testing.svg">
+          <img src="/img/mobile-app-development.svg">
+         
+
+          <img src="/img/product-iteration.svg">
+          <img src="/img/tech-automation.svg ">
+          <img src="/img/migrating.svg">
+          <img src="/img/micro-services.svg">
+             -->
+      </ul>
+      <a href="/contact" class="btn btn-primary btn-lg">Get Started Today</a>
+  </div>
+</div>
+<br>
+<br>
+
+<footer>
+  <div class="footer">
+      <div class="container">
+          <div class="row">
+              <!-- Column 1 -->
+              <div class="col-sm-2">
+                <h4>CODECRUX</h4>
+                <ul class="list-unstyled">
+                  <li class="row"><a href="/about">About</a></li>
+                  <li class="row"><a href="/portfolio">Portfolio</a></li>
+                  <li class="row"><a href="/services">Services</a></li>
+                  <li class="row"><a href="/jobs">Join our team</a></li>
+                  <li class="row"><a href="/blog">Blog</a></li>
+                  <li class="row"><a href="/contact">Contact</a></li>
+                </ul>
+              </div>
+              <!-- Column 2 -->
+
+              <div class="col-sm-3">
+                <h4>HIRE REMOTE TEAM</h4>
+                <ul class="list-unstyled">
+                  <li class="row"> <a href="/hire-ui-ux-designer/" >Hire UI & UX Design</a></li>
+                  <li class="row"> <a href="/hire-ruby-on-rails-developer" >Hire Ruby on rails developer</a></li>
+                  <li class="row"> <a href="/hire-android-developer" >Hire Android app developer</a></li>
+                  <li class="row"> <a href="/hire-mobile-app-developer" >Hire Moblie app developer</a></li>
+                  <li class="row"> <a href="/hire-app-developer" >Hire App developer</a></li>
+                  <li class="row"> <a href="/hire-web-developer" >Hire Web developer</a></li>
+                </ul>
+            </div>
+              
+              <!-- Column 3 -->
+
+              <div class="col-sm-3">
+                <h4>SOFTWARE SERVICES</h4>
+                <ul class="list-unstyled">
+                  <li class="row"><a href="/ui-ux-design">UI & UX Design</a></li>
+                  <li class="row"><a href="/ruby-on-rails-development" >Web Application Development</a></li>
+                  <li class="row"><a href="/ruby-on-rails-development" >Ruby on rails Development</a></li>
+                  <li class="row"><a href="/mobile-apps-development" >Mobile application development</a></li>
+                  <li class="row"><a href="/android-applications" >Android application development</a></li>
+                  <li class="row"><a href="/ios-mobile-app-development" >iOS moblie app development</a></li>
+                  <li class="row"><a href="/react-native-app-development" >React Native App Development</a></li>
+                  <li class="row"><a href="/devops-as-a-service" >DevOps as a Service </a></li>
+                  <li class="row"><a href="/kubernetes" >Kubernetes</a></li>
+                  <li class="row"><a href="/open-source-customization" >Open Source Customization</a></li>
+                </ul>
+               
+            </div>
+
+
+              
+              <!-- Column 4 -->
+              <ul class="col-sm-4">
+                  <h4>READY TO USE SOLUTIONS</h4>
+                  <ul class="list-unstyled">
+
+                    <li class="row"><a href="/custom-crm-development">Custom CRM development</a></li>
+                    <li class="row"><a href="/ecommerce-website-and-mobile-app">Ecommerce website and mobile app</a></li>
+                    <li class="row"><a href="/kennel-management-software">Kennel management software</a></li>
+                    <li class="row"><a href="/job-portal-development">Job portal development</a></li>
+                    <li class="row"><a href="/waste-management-software-applications">Waste management software applications</a></li>
+
+                    <li class="row"><a href="/recruitment-agencies-software-development">Recruitment agencies software development</a></li>
+                    <li class="row"><a href="/sales-crm-software-for-small-business">Sales crm software for small business</a></li> 
+
+                    <li class="row"><a href="/real-estate-rental-property-management-software" >Real estate rental property management</a></li>
+                    <li class="row"><a href="/real-estate-crm-software" >Real estate CRM software</a></li>
+                    <li class="row"><a href="/health-care-delivery-system" >Health Care platform</a></li>
+
+                    <li class="row"><a href="/alumni-network-website-development" >Alumni network website development</a></li>
+                    <li class="row"><a href="/private-social-networking-application-development" >Private social networking application development</a></li>
+                    <li class="row"><a href="/audio-and-video-conferencing-softwares" >Audio and video conferencing softwares</a></li>
+                  
+                    <li class="row"><a href="/school-managemnt-softwares-and-mobile-app" >School Management Software</a></li>
+                    <li class="row"><a href="/learning-management-system-with-video-conferencing" >Learning management system with video conferencing</a></li>
+
+
+                    <!-- <li><a href="/online-hotel-booking-system-like-oyo-rooms">Online hotel booking system like oyo rooms</a></li>
+                    <li><a href="/outdoor-adventure-event-booking-platform">Outdoor adventure event booking platform</a></li>
+                    <li><a href="/car-service-mobile-application">Car service mobile application</a></li>
+                    <li><a href="/society-management-saas-application">Society management SaaS application</a></li>
+                    <li><a href="/onine-doctor-appointment-with-live-video-mobile-app">Onine Doctor appointment with live video mobile app</a></li>
+                    <li><a href="/clinic-hospital-management-software">Clinic/Hospital Management software</a></li> -->
+
+                    <!-- <li><a href="/onile-grocery-store-and-delivery-mobile-app">Online grocery store and delivery mobile app</a></li>
+                    <li><a href="/online-food-delivery-app-development">Online food delivery app development</a></li>
+                    <li><a href="/medicine-pharmacy-delivery-mobile-app">Medicine pharmacy delivery mobile app</a></li>
+                    <li><a href="/on-demand-courier-parcel-delivery-application">On-demand courier parcel delivery application</a></li>
+                    <li><a href="/driver-tracking-solution">Driver tracking solution</a></li>
+                    <li><a href="/online-car-rental-platform">Online car rental platform</a></li>
+                    <li><a href="/Black-friday/index.html">Black Friday</a></li> -->
+              </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="footer-bottom">
+      <div class="container">
+          &copy; CodeCrux Web technologies(p) Ltd.
+            <a href="/privacy-policy">Privacy Policy</a> | 
+            <a href="/terms-and-conditions">Terms and Conditions</a> |
+            <a href="/return-and-refund-policy">Return and refund policy</a> |
+            <a href="/pricing">Pricing</a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <!-- Social Media Icons -->
+            <a href="https://www.facebook.com/codecrux" target="_blank" class="text-white" aria-label="Facebook">
+                <i class="fa fa-facebook" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;
+            </a>
+            <a href="https://twitter.com/codecrux" target="_blank" class="text-white" aria-label="Twitter">
+                <i class="fa fa-twitter" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;
+            </a>
+            <a href="https://www.linkedin.com/company/codecrux" target="_blank" class="text-white" aria-label="LinkedIn">
+                <i class="fa fa-linkedin" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;
+            </a>
+            <a href="https://www.instagram.com/codecrux" target="_blank" class="text-white" aria-label="Instagram">
+                <i class="fa fa-instagram" style="font-size: 1.5rem;"></i>
+            </a>
+      </div>
+  </div>
+
+</footer>
+
+
+      
+      
+
+  </body>
+</html>
+
+
+<style>
+  /* Style for the image container */
+.image-box {
+  border-radius: 15px; /* Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+  overflow: hidden; /* Ensures the image stays within the rounded corners */
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Style for the image */
+.image-box img {
+  display: block;
+  width: 100%; /* Ensures the image takes the full width of the container */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 15px; /* Ensures the image also has rounded corners */
+}
+
+/* Hover effect */
+.image-box:hover {
+  transform: scale(1.05); /* Slightly enlarges the box on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
+}
+
+</style>

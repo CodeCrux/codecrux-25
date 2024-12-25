@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Security Best Practices for Ruby on Rails Applications | CodeCrux Web Technologies pvt ltd</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Security Best Practices for Ruby on Rails Applications" />
+<meta name="author" content="Shyam Mohan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Ruby on Rails (RoR) is a robust and popular framework for building web applications." />
+<meta property="og:description" content="Ruby on Rails (RoR) is a robust and popular framework for building web applications." />
+<link rel="canonical" href="http://localhost:4000/blog/security-best-practices-for-ruby-on-rails-applications/" />
+<meta property="og:url" content="http://localhost:4000/blog/security-best-practices-for-ruby-on-rails-applications/" />
+<meta property="og:site_name" content="CodeCrux Web Technologies pvt ltd" />
+<meta property="og:image" content="http://localhost:4000/img/blogs/security-best-practices-for-ruby-on-rails-applications.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-09T06:18:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/img/blogs/security-best-practices-for-ruby-on-rails-applications.webp" />
+<meta property="twitter:title" content="Security Best Practices for Ruby on Rails Applications" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shyam Mohan"},"dateModified":"2024-11-09T06:18:00+05:30","datePublished":"2024-11-09T06:18:00+05:30","description":"Ruby on Rails (RoR) is a robust and popular framework for building web applications.","headline":"Security Best Practices for Ruby on Rails Applications","image":"http://localhost:4000/img/blogs/security-best-practices-for-ruby-on-rails-applications.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/security-best-practices-for-ruby-on-rails-applications/"},"url":"http://localhost:4000/blog/security-best-practices-for-ruby-on-rails-applications/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CodeCrux Web Technologies pvt ltd" />
+    <meta name="viewport" content="width=device-width">
+    
+
+<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5a50d614079115001207f66b&product=inline-share-buttons' async='async'></script>
+
+
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,900,500,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default home-navbar" id="navbar">
+      <div class="container"><!-- navigation -->
+<section class="fixed-top navigation">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html"><img src="images/codecrux-logo.svg" alt="logo"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- navbar -->
+      <div class="collapse navbar-collapse text-center" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#feature">Feature</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="service.html">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <a href="#" class="btn btn-primary ml-lg-3 primary-shadow">Try Free</a>
+      </div>
+    </nav>
+  </div>
+</section>
+<!-- /navigation -->
+
+
+<div class="navbar-header page-scroll">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand nav-logo" href="/">
+    <span class="">
+      <img src="/img/codecrux-logo.svg" alt="codecrux.com"  class="img-fluid img-thumbnail"/>
+    </span>
+  </a>
+  <a href="/schedule-meeting/" class="btn-rounded btn-g"> Schedule a Meeting </a>
+  
+</div>
+
+<div class="collapse navbar-collapse nav-text" id="main-nav" style="border-bottom: 1px solid #eee;">
+  <ul class="nav navbar-nav navbar-right">
+    <!-- <li class="dropdown"><a href="https://codecrux-com.translate.goog/?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=en&_x_tr_pto=wapp" class="dropdown-toggle-new">TRANSLATE</a></li> -->
+    <li class="text-left"><a href="/about">ABOUT</a></li>
+    <li class="text-left"><a href="/blog">BLOG</a></li>
+    
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">SERVICES
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li class="p10 text-left"><a href="/ui-ux-design">UI & UX Design</a></li>
+        <!-- <li class="p10 text-left"><a href="/web-application-development">Web Application Development</a></li> -->
+        <li class="p10 text-left"><a href="/ruby-on-rails-development">Ruby on rails Development</a></li>
+        <li class="p10 text-left"><a href="/mobile-apps-development">Mobile application development</a></li>
+        <li class="p10 text-left"><a href="/android-applications">Android application development</a></li>
+        <!-- <li class="p10 text-left"><a href="/ios-mobile-app-development">iOS moblie app development</a></li> -->
+        <li class="p10 text-left"><a href="/react-native-app-development">React Native App Development</a></li>
+        <li class="p10 text-left"><a href="/devops-as-a-service">DevOps as a Service </a></li>
+        <li class="p10 text-left"><a href="/kubernetes">Kubernetes</a></li>
+        <li class="p10 text-left"><a href="/open-source-customization">Open Source Customization</a></li>
+      </ul>
+    </li>
+
+    <!-- <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">SOLUTIONS
+      <span class="caret"></span></a>
+      
+      <ul class="dropdown-menu">
+        <li class="p10 text-left"><a href="/custom-crm-development">Custom CRM development</a></li>
+        <li class="p10 text-left"><a href="/ecommerce-website-and-mobile-app">Ecommerce website and mobile app</a></li>
+        <li class="p10 text-left"><a href="/kennel-management-software">Kennel management software</a></li>
+        <li class="p10 text-left"><a href="/job-portal-development">Job portal development</a></li>
+        <li class="p10 text-left"><a href="/waste-management-software-applications">Waste management software applications</a></li>
+      </ul>
+
+    </li> -->
+
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">HIRE A DEVELOPER
+      <span class="caret"></span></a>
+      
+      <ul class="dropdown-menu">
+       
+          <li class="p10 text-left"><a href="/hire-ui-ux-designer/">Hire UI & UX Design</a></li>
+          <li class="p10 text-left"><a href="/hire-ruby-on-rails-developer">Hire Ruby on rails developer</a></li>
+          <li class="p10 text-left"><a href="/hire-android-developer">Hire Android app developer</a></li>
+          <li class="p10 text-left"><a href="/hire-mobile-app-developer">Hire Moblie app developer</a></li>
+          <li class="p10 text-left"><a href="/hire-app-developer">Hire App developer</a></li>
+          <li class="p10 text-left"><a href="/hire-web-developer">Hire Web developer</a></li>
+
+      
+      </ul>
+
+    </li>
+
+
+
+    <!-- <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">SUCCESS STORIES
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li class="p10 text-left"><a href="/success-stories">Success Stories</a></li>
+        <li class="p10 text-left"><a href="/success-stories/maverick-ai">Maverick.ai</a></li>
+        <li class="p10 text-left"><a href="/success-stories/tee-public">Teepublic</a></li>
+        <li class="p10 text-left"><a href="/success-stories/minibar-delivery">Minibar Delivery</a></li>
+      </ul>
+    </li> -->
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">COMPANY
+        <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li class="p10 text-left"><a href="/about">About</a></li>
+        <li class="p10 text-left"><a href="/portfolio">Portfolio</a></li>
+        <li class="p10 text-left"><a href="/services">Services</a></li>
+        <li class="p10 text-left"><a href="/jobs">Join our team</a></li>
+        <li class="p10 text-left"><a href="/blog">Blog</a></li>
+        <li class="p10 text-left"><a href="/contact">Contact</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-cta"><div id="btn-meetsect"><a href="/schedule-meeting/" class="btn btn-rounded btn-meet">&nbsp;Schedule a Meeting&nbsp;</a></div></li>
+  </ul>
+</div>
+</div>
+    </nav>
+ 
+    <div class="container">
+    
+      <div class="blog-post-body">
+        <h1>Security Best Practices for Ruby on Rails Applications</h1>
+        <time>
+          <i class="fa fa-clock-o"></i>
+          09 Nov 2024 -
+          Shyam Mohan
+        </time>
+
+        <br>
+        <br>
+        <center>
+          <img src="/img/blogs/security-best-practices-for-ruby-on-rails-applications.webp" alt="Security Best Practices for Ruby on Rails Applications" class="img-responsive"/>
+        </center>
+        <br>
+
+        <p>Ruby on Rails (RoR) is a robust and popular framework for building web applications. While it provides many built-in security features, developers must actively implement best practices to safeguard applications from evolving threats. In this blog, we’ll explore essential security measures for keeping your Rails applications secure.</p>
+
+<h3 id="1-update-rails-and-dependencies-regularly">1. <strong>Update Rails and Dependencies Regularly</strong></h3>
+
+<p>Rails and its dependencies are frequently updated to patch security vulnerabilities. Ensure your application uses the latest stable version of Rails and its gems. Tools like <code class="language-plaintext highlighter-rouge">bundler-audit</code> can help identify vulnerable dependencies.</p>
+
+<p><strong>Tips:</strong></p>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">gem 'rails', '~&gt; X.X'</code> to stay updated with minor and patch-level releases.</li>
+  <li>Automate dependency checking with tools like Dependabot or Snyk.</li>
+</ul>
+
+<h3 id="2-enable-strong-parameters">2. <strong>Enable Strong Parameters</strong></h3>
+
+<p>Strong Parameters in Rails protect your application against mass assignment vulnerabilities by explicitly specifying which parameters are allowed.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>ruby</p>
+
+<p><code class="language-plaintext highlighter-rouge">def user_params
+  params.require(:user).permit(:name, :email, :password)
+end</code></p>
+
+<h3 id="3-sanitize-user-input">3. <strong>Sanitize User Input</strong></h3>
+
+<p>User input can be a vector for attacks like SQL Injection and Cross-Site Scripting (XSS). Always sanitize and validate input data using Rails’ built-in helpers.</p>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">sanitize</code> or <code class="language-plaintext highlighter-rouge">strip_tags</code> for cleaning input.</li>
+  <li>Validate data at the model level.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<p>ruby</p>
+
+<p><code class="language-plaintext highlighter-rouge">validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }</code></p>
+
+<h3 id="4-use-the-rails-csrf-protection">4. <strong>Use the Rails CSRF Protection</strong></h3>
+
+<p>Rails automatically includes a CSRF (Cross-Site Request Forgery) token in forms and validates it on submission. Ensure it’s enabled by including <code class="language-plaintext highlighter-rouge">protect_from_forgery</code> in your controllers.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>ruby</p>
+
+<p><code class="language-plaintext highlighter-rouge">class ApplicationController &lt; ActionController::Base
+  protect_from_forgery with: :exception
+end</code></p>
+
+<h3 id="5-secure-sensitive-data-with-rails-secrets">5. <strong>Secure Sensitive Data with Rails Secrets</strong></h3>
+
+<p>Store sensitive configuration data, such as API keys and database credentials, in Rails credentials or environment variables.</p>
+
+<p><strong>Steps:</strong></p>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">rails credentials:edit</code> for secure storage.</li>
+  <li>Avoid committing sensitive data to your version control system.</li>
+</ul>
+
+<h3 id="6-implement-authentication-and-authorization">6. <strong>Implement Authentication and Authorization</strong></h3>
+
+<p>Authentication libraries like Devise simplify user authentication in Rails. For authorization, consider using gems like Pundit or CanCanCan to control user access.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>ruby</p>
+
+<p><code class="language-plaintext highlighter-rouge">class PostPolicy
+  def update?
+    user.admin? || user == record.user
+  end
+end</code></p>
+
+<h3 id="7-encrypt-data-at-rest-and-in-transit">7. <strong>Encrypt Data at Rest and in Transit</strong></h3>
+
+<ul>
+  <li>Use HTTPS with SSL/TLS to encrypt data in transit.</li>
+  <li>Store sensitive data like passwords with strong encryption algorithms.</li>
+</ul>
+
+<p>Rails’ <code class="language-plaintext highlighter-rouge">has_secure_password</code> is a convenient way to hash passwords:</p>
+
+<p>ruby</p>
+
+<p><code class="language-plaintext highlighter-rouge">class User &lt; ApplicationRecord
+  has_secure_password
+end</code></p>
+
+<h3 id="8-enable-http-security-headers">8. <strong>Enable HTTP Security Headers</strong></h3>
+
+<p>Leverage middleware like <code class="language-plaintext highlighter-rouge">SecureHeaders</code> to add security headers to your application. These headers prevent clickjacking, XSS, and other attacks.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>ruby</p>
+
+<p><code class="language-plaintext highlighter-rouge">config.middleware.use SecureHeaders::Middleware
+SecureHeaders::Configuration.default do |config|
+  config.x_frame_options = "DENY"
+  config.x_content_type_options = "nosniff"
+end</code></p>
+
+<h3 id="9-perform-regular-security-audits">9. <strong>Perform Regular Security Audits</strong></h3>
+
+<p>Use tools like <code class="language-plaintext highlighter-rouge">Brakeman</code> to detect security vulnerabilities in your Rails application.</p>
+
+<p><strong>Install and run:</strong></p>
+
+<p>bash</p>
+
+<p><code class="language-plaintext highlighter-rouge">gem install brakeman
+brakeman</code></p>
+
+<h3 id="10-restrict-public-file-access">10. <strong>Restrict Public File Access</strong></h3>
+
+<p>Limit access to files in your <code class="language-plaintext highlighter-rouge">public</code> directory and ensure only necessary files are exposed.</p>
+
+<h3 id="11-log-and-monitor-security-events">11. <strong>Log and Monitor Security Events</strong></h3>
+
+<p>Implement robust logging and monitoring solutions to detect and respond to suspicious activity. Gems like <code class="language-plaintext highlighter-rouge">Lograge</code> can simplify log management in Rails.</p>
+
+<h3 id="12-avoid-default-routes-and-expose-only-needed-endpoints">12. <strong>Avoid Default Routes and Expose Only Needed Endpoints</strong></h3>
+
+<p>Remove default routes and explicitly define routes in your <code class="language-plaintext highlighter-rouge">routes.rb</code> file to avoid exposing unnecessary endpoints.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>ruby</p>
+
+<p><code class="language-plaintext highlighter-rouge">Rails.application.routes.draw do
+  resources :users, only: [:show, :update, :destroy]
+end</code></p>
+
+<h3 id="13-use-a-web-application-firewall-waf">13. <strong>Use a Web Application Firewall (WAF)</strong></h3>
+
+<p>Enhance your application’s defense by using a WAF to block malicious traffic.</p>
+
+<h3 id="14-protect-against-dos-attacks">14. <strong>Protect Against DoS Attacks</strong></h3>
+
+<p>Implement rate limiting to protect your application from denial-of-service (DoS) attacks. Gems like <code class="language-plaintext highlighter-rouge">Rack::Attack</code> can help.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>ruby</p>
+
+<p><code class="language-plaintext highlighter-rouge">Rack::Attack.throttle('requests by ip', limit: 5, period: 2) do |req|
+  req.ip
+end</code></p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Securing your Ruby on Rails application requires a combination of framework features, best practices, and proactive monitoring. By following these best practices, you can significantly reduce vulnerabilities and build a more secure application.</p>
+
+<p>Remember, security is an ongoing process—stay informed about new threats and regularly update your skills and tools to keep your application safe.</p>
+
+      </div>
+    </div>
+
+    <br>
+<br>
+
+<div class="container">
+  <div class="cta-box">
+      <h2>Empower Your Business with Our Expert Solutions</h2>
+      <p>Unlock the full potential of your projects with our professional services!</p>
+      <ul class="list-unstyled mb-4">
+          <li><strong>Full Stack Development | AI/ML Services | DevOps Expertise</strong></li>
+          <!-- <img src="/img/react-app.svg">
+          <img src="/img/ruby-icon.svg">
+          <img src="/img/testing.svg">
+          <img src="/img/mobile-app-development.svg">
+         
+
+          <img src="/img/product-iteration.svg">
+          <img src="/img/tech-automation.svg ">
+          <img src="/img/migrating.svg">
+          <img src="/img/micro-services.svg">
+             -->
+      </ul>
+      <a href="/contact" class="btn btn-primary btn-lg">Get Started Today</a>
+  </div>
+</div>
+<br>
+<br>
+
+<footer>
+  <div class="footer">
+      <div class="container">
+          <div class="row">
+              <!-- Column 1 -->
+              <div class="col-sm-2">
+                <h4>CODECRUX</h4>
+                <ul class="list-unstyled">
+                  <li class="row"><a href="/about">About</a></li>
+                  <li class="row"><a href="/portfolio">Portfolio</a></li>
+                  <li class="row"><a href="/services">Services</a></li>
+                  <li class="row"><a href="/jobs">Join our team</a></li>
+                  <li class="row"><a href="/blog">Blog</a></li>
+                  <li class="row"><a href="/contact">Contact</a></li>
+                </ul>
+              </div>
+              <!-- Column 2 -->
+
+              <div class="col-sm-3">
+                <h4>HIRE REMOTE TEAM</h4>
+                <ul class="list-unstyled">
+                  <li class="row"> <a href="/hire-ui-ux-designer/" >Hire UI & UX Design</a></li>
+                  <li class="row"> <a href="/hire-ruby-on-rails-developer" >Hire Ruby on rails developer</a></li>
+                  <li class="row"> <a href="/hire-android-developer" >Hire Android app developer</a></li>
+                  <li class="row"> <a href="/hire-mobile-app-developer" >Hire Moblie app developer</a></li>
+                  <li class="row"> <a href="/hire-app-developer" >Hire App developer</a></li>
+                  <li class="row"> <a href="/hire-web-developer" >Hire Web developer</a></li>
+                </ul>
+            </div>
+              
+              <!-- Column 3 -->
+
+              <div class="col-sm-3">
+                <h4>SOFTWARE SERVICES</h4>
+                <ul class="list-unstyled">
+                  <li class="row"><a href="/ui-ux-design">UI & UX Design</a></li>
+                  <li class="row"><a href="/ruby-on-rails-development" >Web Application Development</a></li>
+                  <li class="row"><a href="/ruby-on-rails-development" >Ruby on rails Development</a></li>
+                  <li class="row"><a href="/mobile-apps-development" >Mobile application development</a></li>
+                  <li class="row"><a href="/android-applications" >Android application development</a></li>
+                  <li class="row"><a href="/ios-mobile-app-development" >iOS moblie app development</a></li>
+                  <li class="row"><a href="/react-native-app-development" >React Native App Development</a></li>
+                  <li class="row"><a href="/devops-as-a-service" >DevOps as a Service </a></li>
+                  <li class="row"><a href="/kubernetes" >Kubernetes</a></li>
+                  <li class="row"><a href="/open-source-customization" >Open Source Customization</a></li>
+                </ul>
+               
+            </div>
+
+
+              
+              <!-- Column 4 -->
+              <ul class="col-sm-4">
+                  <h4>READY TO USE SOLUTIONS</h4>
+                  <ul class="list-unstyled">
+
+                    <li class="row"><a href="/custom-crm-development">Custom CRM development</a></li>
+                    <li class="row"><a href="/ecommerce-website-and-mobile-app">Ecommerce website and mobile app</a></li>
+                    <li class="row"><a href="/kennel-management-software">Kennel management software</a></li>
+                    <li class="row"><a href="/job-portal-development">Job portal development</a></li>
+                    <li class="row"><a href="/waste-management-software-applications">Waste management software applications</a></li>
+
+                    <li class="row"><a href="/recruitment-agencies-software-development">Recruitment agencies software development</a></li>
+                    <li class="row"><a href="/sales-crm-software-for-small-business">Sales crm software for small business</a></li> 
+
+                    <li class="row"><a href="/real-estate-rental-property-management-software" >Real estate rental property management</a></li>
+                    <li class="row"><a href="/real-estate-crm-software" >Real estate CRM software</a></li>
+                    <li class="row"><a href="/health-care-delivery-system" >Health Care platform</a></li>
+
+                    <li class="row"><a href="/alumni-network-website-development" >Alumni network website development</a></li>
+                    <li class="row"><a href="/private-social-networking-application-development" >Private social networking application development</a></li>
+                    <li class="row"><a href="/audio-and-video-conferencing-softwares" >Audio and video conferencing softwares</a></li>
+                  
+                    <li class="row"><a href="/school-managemnt-softwares-and-mobile-app" >School Management Software</a></li>
+                    <li class="row"><a href="/learning-management-system-with-video-conferencing" >Learning management system with video conferencing</a></li>
+
+
+                    <!-- <li><a href="/online-hotel-booking-system-like-oyo-rooms">Online hotel booking system like oyo rooms</a></li>
+                    <li><a href="/outdoor-adventure-event-booking-platform">Outdoor adventure event booking platform</a></li>
+                    <li><a href="/car-service-mobile-application">Car service mobile application</a></li>
+                    <li><a href="/society-management-saas-application">Society management SaaS application</a></li>
+                    <li><a href="/onine-doctor-appointment-with-live-video-mobile-app">Onine Doctor appointment with live video mobile app</a></li>
+                    <li><a href="/clinic-hospital-management-software">Clinic/Hospital Management software</a></li> -->
+
+                    <!-- <li><a href="/onile-grocery-store-and-delivery-mobile-app">Online grocery store and delivery mobile app</a></li>
+                    <li><a href="/online-food-delivery-app-development">Online food delivery app development</a></li>
+                    <li><a href="/medicine-pharmacy-delivery-mobile-app">Medicine pharmacy delivery mobile app</a></li>
+                    <li><a href="/on-demand-courier-parcel-delivery-application">On-demand courier parcel delivery application</a></li>
+                    <li><a href="/driver-tracking-solution">Driver tracking solution</a></li>
+                    <li><a href="/online-car-rental-platform">Online car rental platform</a></li>
+                    <li><a href="/Black-friday/index.html">Black Friday</a></li> -->
+              </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="footer-bottom">
+      <div class="container">
+          &copy; CodeCrux Web technologies(p) Ltd.
+            <a href="/privacy-policy">Privacy Policy</a> | 
+            <a href="/terms-and-conditions">Terms and Conditions</a> |
+            <a href="/return-and-refund-policy">Return and refund policy</a> |
+            <a href="/pricing">Pricing</a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <!-- Social Media Icons -->
+            <a href="https://www.facebook.com/codecrux" target="_blank" class="text-white" aria-label="Facebook">
+                <i class="fa fa-facebook" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;
+            </a>
+            <a href="https://twitter.com/codecrux" target="_blank" class="text-white" aria-label="Twitter">
+                <i class="fa fa-twitter" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;
+            </a>
+            <a href="https://www.linkedin.com/company/codecrux" target="_blank" class="text-white" aria-label="LinkedIn">
+                <i class="fa fa-linkedin" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;
+            </a>
+            <a href="https://www.instagram.com/codecrux" target="_blank" class="text-white" aria-label="Instagram">
+                <i class="fa fa-instagram" style="font-size: 1.5rem;"></i>
+            </a>
+      </div>
+  </div>
+
+</footer>
+
+
+      
+      
+
+  </body>
+</html>
+
+
+<style>
+  /* Style for the image container */
+.image-box {
+  border-radius: 15px; /* Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+  overflow: hidden; /* Ensures the image stays within the rounded corners */
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Style for the image */
+.image-box img {
+  display: block;
+  width: 100%; /* Ensures the image takes the full width of the container */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 15px; /* Ensures the image also has rounded corners */
+}
+
+/* Hover effect */
+.image-box:hover {
+  transform: scale(1.05); /* Slightly enlarges the box on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
+}
+
+</style>
