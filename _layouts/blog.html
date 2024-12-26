@@ -28,42 +28,69 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <div id="fb-root"></div>
-    <script>
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-
   </head>
 
-  <body id="page-top" class="index">
+  <body>
 
-    <nav class="navbar navbar-default default-header home-navbar" id="navbar">
-      <!-- {% include /status-banner.html %} -->
-      <div class="container">
-        {% include /header.html %}
-      </div>
+    <nav class="navbar navbar-default home-navbar" id="navbar">
+      <div class="container">{% include /header.html %}</div>
     </nav>
+ 
+    <div class="container">
+    
+      <div class="blog-post-body">
+        <h1>{{ page.title }}</h1>
+        <time>
+          <i class="fa fa-clock-o"></i>
+          {{ page.date | date_to_string }} -
+          {{ page.author }}
+        </time>
 
-    <div class="blog-main-content">
-      {{ content }}
+        <br>
+        <br>
+        <center>
+          <img src="{{ page.image }}" alt="{{page.title}}" class="img-responsive"/>
+        </center>
+        <br>
+
+        {{ content }}
+      </div>
     </div>
-
-    <div class="clearfix"></div>
 
     {% include /footer.html %}
 
-    <!-- jQuery Version 1.11.0 -->
-    <!-- <script src="{{ site.baseurl }}/js/jquery-1.11.0.js"></script> -->
-    <!-- Bootstrap Core JavaScript -->
-    <!-- <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script> -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+      
+
   </body>
 </html>
+
+
+<style>
+  /* Style for the image container */
+.image-box {
+  border-radius: 15px; /* Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+  overflow: hidden; /* Ensures the image stays within the rounded corners */
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Style for the image */
+.image-box img {
+  display: block;
+  width: 100%; /* Ensures the image takes the full width of the container */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 15px; /* Ensures the image also has rounded corners */
+}
+
+/* Hover effect */
+.image-box:hover {
+  transform: scale(1.05); /* Slightly enlarges the box on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
+}
+
+</style>
